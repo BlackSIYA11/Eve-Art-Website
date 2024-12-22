@@ -341,7 +341,7 @@ header {
 }
 
 
-/* About US page */
+/* About Us page */
 #about-page {
   background-color: rgb(6, 6, 6);
   font-family: Arial, sans-serif;
@@ -553,6 +553,11 @@ header {
   #about-page .image {
     width: 100px;
   }
+
+  /* Ensure contact link is legible on smaller screens */
+  #about-page .contact-link {
+    font-size: 14px;
+  }
 }
 
 
@@ -754,6 +759,7 @@ header {
   .navMenu ul {
     flex-direction: column;
     gap: 1rem;
+    text-align: center;
   }
 
   .animated-title {
@@ -1296,6 +1302,7 @@ header {
     font-size: 0.9rem;
   }
 }
+
 
 
 
