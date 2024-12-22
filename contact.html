@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EA</title>
+    <meta name="description" content="Contact EA for inquiries and more information. Find our contact details and operating hours.">
+    <meta name="keywords" content="contact us, EA contact, email, phone, operating hours">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/EA Logo favicon.ico">
+</head>
+<body id="contact-page">
+    <header>
+        <div class="logo-container">
+            <img src="images/E ALOGP.png" width="50" height="50" class="logo" alt="EA logo">
+        </div>
+        <nav class="navMenu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li class="Current">CONTACT US</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contact-container">
+            <!-- Social Media Section -->
+            <div class="socials-container">
+                <h1>SOCIALS</h1>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/evelyn.munangati" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://www.instagram.com/evelyn7.11/profilecard/?igsh=MWlpZmpzM3ZweG1kZQ==" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://www.linkedin.com/in/evelyn-munangati-77659622b/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://www.tiktok.com/@evelyn7.m?_t=8sLzB7DVyvF&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+                    <a href="https://www.youtube.com/@evesarts361" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                </div>
+            </div>
+
+            <!-- Contact Form Section -->
+            <div class="contact-form-container">
+                <h2>Contact Form</h2>
+                <form name="myForm" action="mailto:evelynmunangati76@gmail.com" onsubmit="return validateForm()" method="post">
+                    <div>
+                        <label for="fname">First Name:</label>
+                        <input type="text" id="fname" name="fname" required>
+                    </div>
+                    <div>
+                        <label for="lname">Last Name:</label>
+                        <input type="text" id="lname" name="lname" required>
+                    </div>
+                    <div>
+                        <label for="emailaddress">Email Address:</label>
+                        <input type="email" id="emailaddress" name="emailaddress" required>
+                    </div>
+                    <div>
+                        <label for="subject">Message:</label>
+                        <textarea id="subject" name="subject" required>Write something...</textarea>
+                    </div>
+                    <div>
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
