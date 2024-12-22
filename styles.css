@@ -360,18 +360,17 @@ header {
 }
 
 
-
 /* About Us Page Styles */
 #about-page {
   background-color: rgb(6, 6, 6);
   font-family: Arial, sans-serif;
   color: white;
-  height: 100vh;
+  min-height: 100vh; /* Ensure page takes full height */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
+  overflow: auto; /* Enable scrolling */
   margin: 0;
   padding: 20px; /* Added padding for better layout */
 }
@@ -586,18 +585,20 @@ header {
 }
 
 
+
 /* Services page styles */
 #services-page {
   background: linear-gradient(45deg, #1b1b1b);
   font-family: 'Arial', sans-serif;
   color: white;
-  min-height: 100vh;
+  min-height: 100vh; /* Ensure full viewport height */
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0;
-  overflow: hidden;
+  overflow: auto; /* Allow scrolling */
   padding-top: 60px; /* Ensure space for fixed navbar */
+  box-sizing: border-box; /* Include padding in element's total width and height */
 }
 
 /* Navbar */
@@ -1124,6 +1125,7 @@ header {
   align-items: center;
   margin: 0;
   padding-bottom: 20px;
+  overflow-y: auto; /* Allow scrolling */
 }
 
 /* Header */
@@ -1168,6 +1170,8 @@ header {
   margin-top: 100px;
   padding: 20px;
   gap: 50px;
+  flex-wrap: wrap; /* Ensure content wraps on smaller screens */
+  overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
 /* Social Media Section */
@@ -1224,6 +1228,7 @@ header {
   color: black;
   border-radius: 10px;
   margin-top: 50px;
+  overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
 .contact-form-container h2 {
