@@ -361,7 +361,7 @@ header {
 
 
 
-/* About Us page */
+/* About Us Page Styles */
 #about-page {
   background-color: rgb(6, 6, 6);
   font-family: Arial, sans-serif;
@@ -373,7 +373,7 @@ header {
   align-items: center;
   overflow: hidden;
   margin: 0;
-  padding: 20px; /* Add some padding for better layout */
+  padding: 20px; /* Added padding for better layout */
 }
 
 /* Navbar styles */
@@ -444,7 +444,7 @@ header {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 80px; /* Adjust for navbar space */
+  margin-top: 80px; /* Adjusted for navbar space */
   padding: 0 20px;
   width: 100%;
 }
@@ -506,7 +506,7 @@ header {
   margin-left: 20px;
 }
 
-/* Responsive Design */
+/* Responsive Design for About Us page */
 @media only screen and (max-width: 1200px) {
   #about-page h1 {
     font-size: 32px;
@@ -597,6 +597,7 @@ header {
   align-items: center;
   margin: 0;
   overflow: hidden;
+  padding-top: 60px; /* Ensure space for fixed navbar */
 }
 
 /* Navbar */
@@ -651,6 +652,7 @@ header {
   margin-top: 100px;
   text-align: center;
   padding: 0 20px;
+  width: 100%;
 }
 
 /* Services List */
@@ -855,6 +857,7 @@ header {
     margin: 5px 0;
   }
 }
+
 
 
 /* Portfolio Page Styling */
