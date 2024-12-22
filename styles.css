@@ -196,7 +196,7 @@ header {
 
 /* General styles */
 #home {
-  background: url('images/Eve\ Sketch\ 1.png') no-repeat center center fixed; /* Fixed background for consistent positioning */
+  background: url('images/Eve Sketch 1.png') no-repeat center center fixed; /* Fixed background for consistent positioning */
   background-size: cover; /* Ensure the image covers the entire section */
   font-family: Arial, sans-serif; /* Clean font */
   color: white;
@@ -340,6 +340,26 @@ header {
   }
 }
 
+/* Ensure text visibility and proper spacing on all devices */
+@media only screen and (max-width: 1024px) {
+  #home .center-content {
+    padding: 20px; /* Add padding to center content on medium screens */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #home .center-content {
+    padding: 10px; /* Add padding to center content on smaller tablets */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #home .center-content {
+    padding: 5px; /* Add padding to center content on mobile screens */
+  }
+}
+
+
 
 /* About Us page */
 #about-page {
@@ -349,10 +369,11 @@ header {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   overflow: hidden;
   margin: 0;
+  padding: 20px; /* Add some padding for better layout */
 }
 
 /* Navbar styles */
@@ -365,7 +386,7 @@ header {
   display: flex;
   justify-content: space-between;
   z-index: 10;
-  border-bottom: 2px solid white; 
+  border-bottom: 2px solid white;
 }
 
 #about-page .navMenu {
@@ -393,18 +414,18 @@ header {
 }
 
 #about-page .contact-link {
-  color: #4a90e2; /* Blue text */
+  color: #4a90e2;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 #about-page .contact-link:hover {
-  color: #f06; /* Highlighted pink on hover */
+  color: #f06;
   text-decoration: underline;
 }
 
-#about-page  .logo-container {
+#about-page .logo-container {
   display: flex;
   align-items: center;
 }
@@ -418,24 +439,27 @@ header {
   align-items: center;
 }
 
-#about-page  main {
+#about-page main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 80px; /* Adjust for navbar space */
   padding: 0 20px;
+  width: 100%;
 }
 
 #about-page h1 {
   font-size: 36px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 #about-page dl {
   text-align: left;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
+  width: 100%;
 }
 
 #about-page dt {
@@ -452,9 +476,11 @@ header {
 #about-page .content {
   display: flex;
   align-items: center;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #about-page .text {
@@ -467,7 +493,6 @@ header {
   width: 200px;
   display: flex;
   justify-content: flex-start;
-  margin-top: -35px;
   align-items: center;
 }
 
@@ -486,9 +511,9 @@ header {
   #about-page h1 {
     font-size: 32px;
   }
-  
+
   #about-page dl {
-    max-width: 500px;
+    max-width: 600px;
   }
 
   #about-page .content {
@@ -502,7 +527,7 @@ header {
   }
 
   #about-page .image {
-    width: 150px;
+    width: 180px;
   }
 }
 
@@ -510,9 +535,9 @@ header {
   #about-page h1 {
     font-size: 28px;
   }
-  
+
   #about-page dl {
-    max-width: 400px;
+    max-width: 500px;
   }
 
   #about-page .content {
@@ -526,7 +551,7 @@ header {
   }
 
   #about-page .image {
-    width: 120px;
+    width: 160px;
   }
 }
 
@@ -551,7 +576,7 @@ header {
   }
 
   #about-page .image {
-    width: 100px;
+    width: 120px;
   }
 
   /* Ensure contact link is legible on smaller screens */
@@ -570,13 +595,13 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
   margin: 0;
+  overflow: hidden;
 }
 
 /* Navbar */
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   padding: 10px 0;
@@ -586,6 +611,7 @@ header {
   align-items: center;
   z-index: 10;
   border-bottom: 2px solid white;
+  box-sizing: border-box;
 }
 
 .navMenu {
@@ -624,6 +650,7 @@ header {
   animation: slideIn 2s ease-in-out;
   margin-top: 100px;
   text-align: center;
+  padding: 0 20px;
 }
 
 /* Services List */
@@ -632,6 +659,7 @@ header {
   padding: 0;
   list-style: none;
   text-align: center;
+  width: 100%;
 }
 
 .services-container ul li {
@@ -753,7 +781,8 @@ header {
 @media only screen and (max-width: 768px) {
   header {
     flex-direction: column;
-    padding: 20px;
+    padding: 15px;
+    text-align: center;
   }
 
   .navMenu ul {
@@ -764,7 +793,8 @@ header {
 
   .animated-title {
     font-size: 1.8rem;
-    margin-top: 50px;
+    margin-top: 60px;
+    padding: 0 15px;
   }
 
   .services-container ul li {
@@ -817,6 +847,12 @@ header {
   .contact-link {
     font-size: 0.9rem;
     padding: 8px 12px;
+  }
+
+  /* Adjust font size and container padding */
+  .services-container ul li {
+    font-size: 1rem;
+    margin: 5px 0;
   }
 }
 
