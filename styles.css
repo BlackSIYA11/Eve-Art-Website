@@ -566,55 +566,68 @@ header {
   }
 }
 
-/* For screens 768px and below (tablets & small laptops) */
+/* For screens 768px and below */
 @media (max-width: 768px) {
-  .about-container {
-    padding: 20px;
-    gap: 20px;
+  #about-page .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
   }
 
-  .about-left img {
+  #about-page .text {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #about-page .image {
+    width: 180px;
+    text-align: center;
+  }
+
+  #about-page .image img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
   }
 
-  .about-right h1 {
-    font-size: 1.8rem;
+  #about-page h1 {
     text-align: center;
+    font-size: 1.8rem;
   }
 
-  .about-right p {
+  #about-page dl {
+    max-width: 100%;
+  }
+
+  #about-page dd {
     font-size: 1rem;
+    line-height: 1.6;
     text-align: justify;
   }
 }
 
-/* For screens 480px and below (phones) */
+/* For screens 480px and below */
 @media (max-width: 480px) {
-  #about-page header {
-    padding: 10px;
-  }
-
-  .about-container {
-    padding: 15px;
-    gap: 15px;
-  }
-
-  .about-right h1 {
+  #about-page h1 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
   }
 
-  .about-right p {
+  #about-page dd {
     font-size: 0.95rem;
     line-height: 1.5;
   }
 
-  .about-left img {
+  #about-page .image {
+    width: 150px;
+  }
+
+  #about-page .image img {
     border-radius: 8px;
   }
 }
+
 
 
 
@@ -809,17 +822,6 @@ header {
 
   .contact-link {
     font-size: 1rem;
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  .animated-title {
-    font-size: 2rem;
-  }
-
-  .services-container ul li {
-    font-size: 1.1rem;
-    padding: 10px;
   }
 }
 
@@ -1118,7 +1120,6 @@ header {
   }
 }
 
-
 /* Global Styles */
 #contact-page {
   background: linear-gradient(45deg, #1b1b1b);
@@ -1129,15 +1130,17 @@ header {
   flex-direction: column;
   align-items: center;
   margin: 0;
+  padding-top: 100px; /* Offset for fixed header */
   padding-bottom: 20px;
-  overflow-y: auto; /* Allow scrolling */
+  overflow-y: auto;
 }
 
 /* Header */
 #contact-page header {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1000;
   padding: 10px 0;
   background-color: black;
   display: flex;
@@ -1149,6 +1152,8 @@ header {
 #contact-page .navMenu ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
   margin: 0;
   padding: 0;
@@ -1168,22 +1173,22 @@ header {
 /* Main Container */
 .contact-container {
   display: flex;
-  justify-content: space-between; /* Align form and socials horizontally */
+  flex-direction: row;
+  justify-content: space-between;
   align-items: flex-start;
   width: 1200px;
   max-width: 100%;
-  margin-top: 100px;
   padding: 20px;
   gap: 50px;
-  flex-wrap: wrap; /* Ensure content wraps on smaller screens */
-  overflow-y: auto; /* Allow scrolling if content overflows */
+  flex-wrap: wrap;
+  overflow-y: auto;
 }
 
 /* Social Media Section */
 .socials-container {
   width: 45%;
   padding: 20px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .socials-container h1 {
@@ -1232,8 +1237,8 @@ header {
   background-color: white;
   color: black;
   border-radius: 10px;
-  margin-top: 50px;
-  overflow-y: auto; /* Allow scrolling if content overflows */
+  margin-top: 30px;
+  overflow-y: auto;
 }
 
 .contact-form-container h2 {
@@ -1272,33 +1277,9 @@ header {
   background-color: #f39c12;
 }
 
-@media (max-width: 1024px) {
-  .contact-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px; /* Ensure proper padding for smaller screens */
-  }
+/* Responsive Design */
 
-  .socials-container,
-  .contact-form-container {
-    width: 90%; /* Make the sections more adaptive */
-    margin-bottom: 20px;
-  }
-
-  .socials-container h1 {
-    font-size: 2rem; /* Adjust headline size */
-  }
-
-  .social-icons a {
-    font-size: 1.2rem; /* Adjust icon text size */
-  }
-
-  .contact-form-container h2 {
-    font-size: 1.6rem; /* Adjust form heading size */
-  }
-}
-
+/* Tablets and below */
 @media (max-width: 1024px) {
   .contact-container {
     flex-direction: column;
@@ -1326,7 +1307,7 @@ header {
   }
 }
 
-/* For tablets and smaller */
+/* Mobile screens */
 @media (max-width: 768px) {
   #contact-page header {
     flex-direction: column;
@@ -1346,16 +1327,11 @@ header {
 
   .socials-container h1 {
     font-size: 1.8rem;
-    text-align: center;
   }
 
   .social-icons a {
     font-size: 1rem;
-    padding: 6px;
-  }
-
-  .contact-form-container {
-    width: 100%;
+    padding: 8px 16px;
   }
 
   .contact-form-container h2 {
@@ -1365,7 +1341,6 @@ header {
 
   .contact-form-container input,
   .contact-form-container textarea {
-    width: 100%;
     font-size: 1rem;
     padding: 10px;
   }
@@ -1376,7 +1351,7 @@ header {
   }
 }
 
-/* For mobile phones */
+/* Extra small phones */
 @media (max-width: 480px) {
   .contact-container {
     padding: 10px;
