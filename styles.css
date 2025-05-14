@@ -530,57 +530,89 @@ header {
   }
 }
 
-@media only screen and (max-width: 768px) {
-  #about-page h1 {
-    font-size: 28px;
-  }
-
-  #about-page dl {
-    max-width: 500px;
-  }
-
-  #about-page .content {
+@media (max-width: 1024px) {
+  #about-page header {
     flex-direction: column;
-    padding: 10px;
-  }
-
-  #about-page .text {
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-
-  #about-page .image {
-    width: 160px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  #about-page h1 {
-    font-size: 24px;
+    align-items: center;
+    padding: 15px;
   }
 
   #about-page .navMenu ul {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 15px;
+    text-align: center;
   }
 
-  #about-page header .navMenu ul li a {
-    font-size: 16px;
-    padding: 8px 12px;
-  }
-
-  #about-page .content {
+  .about-container {
     flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .about-left,
+  .about-right {
+    width: 90%;
+  }
+
+  .about-right h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .about-right p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+/* For screens 768px and below (tablets & small laptops) */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .about-left img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .about-right h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .about-right p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+}
+
+/* For screens 480px and below (phones) */
+@media (max-width: 480px) {
+  #about-page header {
     padding: 10px;
   }
 
-  #about-page .image {
-    width: 120px;
+  .about-container {
+    padding: 15px;
+    gap: 15px;
   }
 
-  /* Ensure contact link is legible on smaller screens */
-  #about-page .contact-link {
-    font-size: 14px;
+  .about-right h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .about-right p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .about-left img {
+    border-radius: 8px;
   }
 }
 
@@ -780,82 +812,55 @@ header {
   }
 }
 
-/* For screens 768px and below */
-@media only screen and (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 15px;
-    text-align: center;
-  }
-
-  .navMenu ul {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-
+@media only screen and (max-width: 1200px) {
   .animated-title {
-    font-size: 1.8rem;
-    margin-top: 60px;
-    padding: 0 15px;
+    font-size: 2rem;
   }
 
   .services-container ul li {
-    font-size: 1rem;
-  }
-
-  .motto-section {
-    margin: 20px 5%;
-    padding: 15px;
-  }
-
-  .motto-section h2 {
-    font-size: 1.4rem;
-  }
-
-  .motto-section p {
-    font-size: 0.8rem;
-  }
-
-  .contact-link {
-    font-size: 1rem;
-    padding: 8px 16px;
+    font-size: 1.1rem;
+    padding: 10px;
   }
 }
 
-/* For screens 480px and below */
+/* For screens 768px and below (tablets & small desktops) */
+@media only screen and (max-width: 768px) {
+  .animated-title {
+    font-size: 1.8rem;
+    margin-top: 40px;
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .services-container ul {
+    padding: 0;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .services-container ul li {
+    font-size: 1rem;
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+/* For screens 480px and below (mobile devices) */
 @media only screen and (max-width: 480px) {
   .animated-title {
     font-size: 1.5rem;
-    margin-top: 30px;
+    margin-top: 20px;
+  }
+
+  .services-container ul {
+    width: 100%;
   }
 
   .services-container ul li {
-    font-size: 1rem;
-  }
-
-  .motto-section {
-    margin: 10px 5%;
-    padding: 10px;
-  }
-
-  .motto-section h2 {
-    font-size: 1.2rem;
-  }
-
-  .motto-section p {
-    font-size: 0.8rem;
-  }
-
-  .contact-link {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-  }
-
-  /* Adjust font size and container padding */
-  .services-container ul li {
-    font-size: 1rem;
-    margin: 5px 0;
+    font-size: 0.95rem;
+    margin: 8px 0;
+    padding: 8px;
+    text-align: left;
   }
 }
 
@@ -1294,73 +1299,113 @@ header {
   }
 }
 
+@media (max-width: 1024px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .socials-container,
+  .contact-form-container {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .socials-container h1 {
+    font-size: 2rem;
+  }
+
+  .social-icons a {
+    font-size: 1.2rem;
+  }
+
+  .contact-form-container h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* For tablets and smaller */
 @media (max-width: 768px) {
-  /* Ensure header items stack vertically for smaller screens */
   #contact-page header {
     flex-direction: column;
-    padding: 10px;
     align-items: center;
+    padding: 10px;
   }
 
   #contact-page .navMenu ul {
     flex-direction: column;
     gap: 10px;
-    margin-top: 10px;
   }
 
   .contact-container {
-    padding: 15px;
-    width: 100%; /* Full width for mobile screens */
-  }
-
-  .socials-container,
-  .contact-form-container {
     width: 100%;
-    margin-bottom: 20px;
+    padding: 15px;
   }
 
   .socials-container h1 {
     font-size: 1.8rem;
+    text-align: center;
   }
 
   .social-icons a {
     font-size: 1rem;
+    padding: 6px;
+  }
+
+  .contact-form-container {
+    width: 100%;
   }
 
   .contact-form-container h2 {
     font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-container {
-    padding: 10px;
-    gap: 15px; /* Reduce gap for very small screens */
-  }
-
-  .socials-container h1 {
-    font-size: 1.4rem;
-    margin-bottom: 15px; /* Reduce margin for better spacing */
-  }
-
-  .social-icons a {
-    font-size: 0.9rem; /* Smaller font for better fit */
-    padding: 8px 12px; /* Adjust padding */
-  }
-
-  .contact-form-container h2 {
-    font-size: 1.3rem; /* Smaller heading for smaller screens */
+    text-align: center;
   }
 
   .contact-form-container input,
   .contact-form-container textarea {
-    font-size: 0.9rem; /* Adjust input font size */
-    padding: 8px; /* Adjust input padding */
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
   }
 
   .contact-form-container button {
-    padding: 8px 12px; /* Adjust button size */
-    font-size: 0.85rem; /* Smaller button text */
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .socials-container h1 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+
+  .social-icons a {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .contact-form-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .contact-form-container input,
+  .contact-form-container textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .contact-form-container button {
+    padding: 8px 12px;
+    font-size: 0.85rem;
   }
 }
 
