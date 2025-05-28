@@ -196,30 +196,9 @@ header {
 
 /* Home Page Styles with Comprehensive Responsive Design */
 
-/* Base Styles */
-#bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-/* Video overlay for contrast */
-.video-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark overlay */
-  z-index: 0;
-}
 
 #home {
-  background: url('images/homepage\ background.mp4') no-repeat center center fixed;
+  background: url('images/Eve\ Sketch\ 1.png') no-repeat center center fixed;
   background-size: cover;
   font-family: Arial, sans-serif;
   color: white;
@@ -316,7 +295,6 @@ header {
   text-decoration: none;
   transition: all 0.3s ease;
   border: none;
-  z-index: 3;
 }
 
 .explore-button:hover {
