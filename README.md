@@ -1,4 +1,5 @@
 🎨 Eve Art
+
 Eve Art is a personal art business dedicated to turning creative ideas into visually striking pieces. This project represents a portfolio-style website showcasing the services offered, artistic specialties, and how to connect with the artist for commissions and collaborations.
 
 📌 About
