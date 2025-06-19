@@ -195,8 +195,6 @@ header {
 
 
 /* Home Page Styles with Comprehensive Responsive Design */
-
-
 #home {
   background: url('images/Eve\ Sketch\ 1.png') no-repeat center center fixed;
   background-size: cover;
@@ -264,7 +262,7 @@ header {
 
 #home .center-content h1 {
   font-size: 4rem;
-  color: #000000;
+  color: #ffffff;
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 
                0 0 30px rgba(255, 255, 255, 0.6), 
                0 0 10px rgba(0, 0, 0, 0.8);
