@@ -3,19 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Eve Art Gallery</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/EA Logo favicon.ico">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            color: white;
+            overflow-x: hidden;
+            background-color: #000;
+            position: relative;
+        }
+
+        /* Art Gallery Background */
+        .gallery-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            opacity: 0.7;
+        }
+
+        .art-piece {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            filter: grayscale(100%) contrast(120%);
+        }
+
+        .art-piece::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+        }
+
+        .art-piece:hover {
+            transform: scale(1.03);
+            filter: grayscale(70%) contrast(130%);
+        }
+
+        /* Sample art pieces - replace with actual artwork */
+        .piece1 { background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'); }
+        .piece2 { background-image: url('https://images.unsplash.com/photo-1578301978018-3005750f3d9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'); }
+        .piece3 { background-image: url('https://images.unsplash.com/photo-1578301978018-3005750f3d9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'); }
+        .piece4 { background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'); }
+        .piece5 { background-image: url('https://images.unsplash.com/photo-1578301978018-3005750f3d9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'); }
+        .piece6 { background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'); }
+        .piece7 { background-image: url('https://images.unsplash.com/photo-1578301978018-3005750f3d9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'); }
+        .piece8 { background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'); }
+        .piece9 { background-image: url('https://images.unsplash.com/photo-1578301978018-3005750f3d9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'); }
+        .piece10 { background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'); }
+        .piece11 { background-image: url('https://images.unsplash.com/photo-1578301978018-3005750f3d9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'); }
+        .piece12 { background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'); }
+
+        /* Content Styling */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .navMenu ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 30px;
+        }
+
+        .navMenu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .navMenu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+
+        .navMenu a:hover::after {
+            width: 100%;
+        }
+
+        main {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .center-content h1 {
+            font-size: 5rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .explore-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .explore-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: white;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .explore-button:hover {
+            color: black;
+        }
+
+        .explore-button:hover::before {
+            left: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery-background {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+            }
+
+            .center-content h1 {
+                font-size: 3.5rem;
+            }
+
+            .navMenu ul {
+                gap: 15px;
+            }
+
+            .navMenu a {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-background {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+            }
+
+            .center-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .navMenu ul {
+                flex-wrap: wrap;
+                gap: 10px;
+                padding: 0 10px;
+            }
+
+            .explore-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body id="home">
+    <!-- Art Gallery Background -->
+    <div class="gallery-background">
+        <div class="art-piece piece1"></div>
+        <div class="art-piece piece2"></div>
+        <div class="art-piece piece3"></div>
+        <div class="art-piece piece4"></div>
+        <div class="art-piece piece5"></div>
+        <div class="art-piece piece6"></div>
+        <div class="art-piece piece7"></div>
+        <div class="art-piece piece8"></div>
+        <div class="art-piece piece9"></div>
+        <div class="art-piece piece10"></div>
+        <div class="art-piece piece11"></div>
+        <div class="art-piece piece12"></div>
+    </div>
+    
     <header>
         <div class="navMenu">
             <ul>
-                <!-- Add an anchor tag around "HOME" for consistent styling -->
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT US</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href=" portfolio.html">Portfolio</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>
